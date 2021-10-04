@@ -6,4 +6,4 @@ mongoose.connect('mongodb://localhost/notas-tp', {
     useFindAndModify: false
 })
     .then(db => console.log('db esta conectada'))
-    .cath(err => console.error('err'));
+    .catch(err => console.error('err'));
