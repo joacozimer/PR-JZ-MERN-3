@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-
+console.log('asdasd');
 mongoose.connect('mongodb://localhost/notas-tp', {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useFindAndModify: false
+    useNewUrlParser: true
 })
     .then(db => console.log('db esta conectada'))
-    .catch(err => console.error('err'));
+    .catch(err => console.error('err', err));
