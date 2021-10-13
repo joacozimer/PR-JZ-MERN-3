@@ -7,6 +7,8 @@ const session = require('express-session');
 
 const app = express();
 require('./database');
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 
 app.set('port', process.env.PORT || 3000);
@@ -20,7 +22,6 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 
-app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'secreto',
@@ -31,9 +32,9 @@ app.use(session({
 
 
 
-app.use(require('./routes/index'));
-app.use(require('./routes/notes'));
-app.use(require('./routes/users'));
+app.use('/', require('./routes/index'));
+app.use('/', require('./routes/notes'));
+app.use('/', require('./routes/users'));
 
 
 app.use(express.static(path.join(__dirname, 'public')));

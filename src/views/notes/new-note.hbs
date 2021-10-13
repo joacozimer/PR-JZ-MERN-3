@@ -1,3 +1,10 @@
+<style>
+  .card-header{
+    color: black;
+    background: red;
+    text-align: center;
+  }
+</style>
 {{#each errors}}
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{text}}
@@ -13,7 +20,7 @@
         <div class="card-body">
          <form action="/notes/new-note" method="POST">
             <div class="form-gruop">
-                <input type="text" name="title" class="form-control" placeholder="title" autofocus> 
+                <input type="text" name="title" class="form-control" placeholder="Titulo" autofocus>
             </div>
             <div class="form-gruop">
                 <textarea name="descripcion" class="form-control" placeholder="Descripcion"></textarea>
