@@ -12,7 +12,7 @@ router.post('/notes/new-note', (req, res) => {
    res.redirect('/notes'); 
 });
 
-router.post('/notes/', async (req, res) => {
+router.post('/notes', async (req, res) => {
    const { title, description } = req.body;
    const errors = [];
    if(!title) {

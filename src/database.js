@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-console.log('asdasd');
+console.log("Base de datos Prendida");
 mongoose.connect('mongodb://localhost/notas-tp', {
     useNewUrlParser: true
 })
