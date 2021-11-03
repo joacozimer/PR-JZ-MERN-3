@@ -6,12 +6,16 @@
     background-color: red;
     border-radius: 10px;
     padding: 10px;
-    margin: 100px;
-
+    margin: 10px;
+    text-align: center;
   }
-  
-  a{
+  .AN{
     text-decoration: none;
+    color: black;
+  }
+  .AN:hover{
+    text-decoration: none;
+    color: blue ;
   }
 </style>
 <div class="row">
@@ -20,11 +24,11 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title d-flex justify-content-between align-items-center">
-          {{ title }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+          {{ title }} <a href="/notes/edit{{_id}}"><i class="fas fa-edit"></i></a>
         </h4>
         <p>{{ description }} </p>
         <!-- DELETE REQUEST -->
-        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+        <form action="/notes/delete{{_id}}?_method=DELETE" method="POST">
           <input type="hidden" name="_method" value="DELETE">
           <button type="submit" class="btn btn-danger btn-block btn-sm">Borrar</button>
         </form>
@@ -41,6 +45,9 @@
   </div>
   {{/each}}
 </div>
+<br>
 <div class="More-notes">
-    <a href="/PR-JZ-MERN-3/src/views/notes/new-note.hbs">Agregar nota</a>
+  <h3>
+    <a class="AN" href="/notes/add">Agregar nota</a>
+  </h3>
 </div>
