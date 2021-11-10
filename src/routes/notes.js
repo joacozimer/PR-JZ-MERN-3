@@ -33,7 +33,6 @@ router.get('/notes/edit/:id', async (req, res) => {
     res.render('/notes/edit-note', {note});
 });
 
-router.get
 
 module.exports = router;
 //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

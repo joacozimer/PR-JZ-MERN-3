@@ -18,6 +18,8 @@
     color: blue ;
   }
 </style>
+<br>
+<br>
 <div class="row">
   {{#each notes}}
   <div class="col-md-3">
@@ -38,7 +40,7 @@
   {{else}}
   <div class="card mx-auto">
     <div class="card-body">
-      <h1>Hello {{user.name}}</h1>
+      <h1>Hola {{username}}</h1>
       <p clsss="lead">No hay notas aun</p>
       <a href="/notes/add" class="btn btn-success btn-block">Crea una!!</a>
     </div>
