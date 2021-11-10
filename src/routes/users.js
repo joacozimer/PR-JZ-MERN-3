@@ -14,7 +14,8 @@ router.get('/users/singup', (req, res) =>{
 
 router.post('/users/singup', (req, res) => {
   const { username, password } = req.body;
-
+  if (!username) return res.render('users/singup', { erroru: true });
+  if (!password) return res.render('users/singup', { errorp: true });
   const NewUser = new User({ username, password});
     NewUser.save();
   res.redirect('/notes');

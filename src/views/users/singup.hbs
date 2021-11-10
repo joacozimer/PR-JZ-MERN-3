@@ -50,6 +50,9 @@
   .box input[type = "submit"]:hover{
     background: #2ecc71;
   }
+  .err{
+    text-align: center;
+  }
 </style>
 
 <!DOCTYPE html>
@@ -58,9 +61,18 @@
     <meta charset="utf-8">
     <title></title>
   </head>
+  <br>
   <body>
+    {{#if erroru}}
+    <h2 class="err">El campo Usuario esta vacio</h2>
+    <br>
+    {{/if}}
+    {{#if errorp}}
+    <h2 class="err">El campo Contraseña esta vacio</h2>
+    <br>
+    {{/if}}
     <form class="box" action="/users/singup"  method="post">
-      <h1>Sing up</h1>
+      <h1>Iniciar Sesion</h1>
       <input type="text" name="username" value="" placeholder="Nombre de Usuario">
       <input type="password" name="password" value="" placeholder="Contraseña">
       <input type="submit" name="" value="Registrarse">

@@ -14,20 +14,10 @@ router.post('/notes/new-note', (req, res) => {
 
 router.post('/notes', async (req, res) => {
    const { title, description } = req.body;
-   const errors = [];
-   if(!title) {
-       errors.push({text: 'Porfavor coloque titulo'});
-   }
-   if(!description) {
-       errors.push({text: 'Porfavor ingrese descripcion'});
-   }
-   if(errors.length > 0) {
-       res.render('notes/new-note', {
-           errors,
-           title,
-           description
-       });
-   }else{
+   
+   if(!title) return res.render('notes/new-note', { errort: true }); 
+   if(!description) return res.render('notes/new-note', { errord: true });
+   else{
     const NewNote = new Note({ title, description});
     await NewNote.save();
     res.redirect('/notes')
