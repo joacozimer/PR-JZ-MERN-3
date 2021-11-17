@@ -1,6 +1,7 @@
 const express = require('express');
 const Notes = require('../models/Notes');
 const router = express.Router();
+const axios = require("axios");
 
 const Note = require('../models/Notes');
 
@@ -30,8 +31,15 @@ router.get('/notes', async (req, res) => {
 });
 router.get('/notes/edit/:id', async (req, res) => {
     const note = await Notes.findById(req.params.id)
-    res.render('/notes/edit-note', {note});
+    res.render('/notes/edit-note', {notes});
 });
+
+router.delete('/notes/delete', (req, res) => {
+   res.send('aca borraria la nota');
+});
+
+
+
 
 
 module.exports = router;

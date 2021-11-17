@@ -36,13 +36,15 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title d-flex justify-content-between align-items-center">
-          {{ title }} <a href="/notes/edit{{_id}}"><i class="fas fa-edit"></i></a>
+          {{ title }}hola <a href="/notes/edit{{_id}}hola"><i class="fas fa-edit"></i></a>
         </h4>
-        <p>{{ description }} </p>
+        <p>{{ description }} hola</p>
         <!-- DELETE REQUEST -->
         <form action="/notes/delete{{_id}}?_method=DELETE" method="POST">
           <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger btn-block btn-sm">Borrar</button>
+          <button type="submit" class="btn btn-danger btn-block btn-sm">
+            Borrar
+          </button>
         </form>
       </div>
     </div>
