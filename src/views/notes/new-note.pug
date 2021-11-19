@@ -1,0 +1,53 @@
+<style>
+  .card-header{
+    color: black;
+    background: red;
+    text-align: center;
+  }
+  .err{
+    text-align: center;
+  }
+  .can{
+    color: white;
+  }
+  .can:hover{
+    text-decoration: none;
+    color: white;
+  } 
+</style>
+{{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/each}}
+{{#if errort}}
+<h2 class="err">El campo Titulo esta vacio</h2>
+<br>
+{{/if}}
+{{#if errord}}
+<h2 class="err">El campo Descripcion esta vacio</h2>
+<br>
+{{/if}}
+
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Nueva Nota</h3>
+        </div>
+        <div class="card-body">
+         <form action="/notes" method="POST">
+            <div class="form-gruop">
+                <input type="text" name="title" class="form-control" placeholder="Titulo" autofocus>
+            </div>
+            <div class="form-gruop">
+                <textarea name="description" class="form-control" placeholder="Descripcion"></textarea>
+            </div>
+            <div class="form-gruop">
+                <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+                <button class="btn btn-danger btn-block"><a class="can" href="/notes/">Cancelar</a></button>
+            </div>
+         </form>
+        </div>
+    </div>
+</div>

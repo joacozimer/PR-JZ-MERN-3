@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const exphbs = require('express-handlebars');
+const pug = require('pug');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
@@ -13,13 +13,13 @@ app.use(express.urlencoded({extended: false}));
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', exphbs({
-    defaultLayout: 'main',
-    layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+// app.engine('.pug', pug({
+//     defaultLayout: 'main',
+//     layoutsDir: path.join(app.get('views'), 'layouts'),
+//     partialsDir: path.join(app.get('views'), 'partials'),
+//     extname: '.pug'
+// }));
+app.set('view engine', '.pug');
 
 
 app.use(methodOverride('_method'));
