@@ -2,3 +2,18 @@ body{
     background-color: black;
     color: white;
 }
+.btn-btn{
+  color: white;
+  text-decoration: none;
+  font-family: Arial;
+  padding: 15px;
+  width: 10px;
+  text-align: center;
+}
+.btn-btn:hover{
+  text-decoration: none;
+  font-family: Arial;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}

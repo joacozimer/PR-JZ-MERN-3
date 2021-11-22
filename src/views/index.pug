@@ -1,12 +1,9 @@
-<style>
-    div{
-        color: black;
-    }
-</style>
-<div class="jumbotron mt-4">
-    <h1 class="display">Bienvenido a Notes</h1>
-    <p class="lead">100$ el Premium</p>
-    <hr class="my-4">
-    <p>En esta pagina podras agregar notas para no olvidar tareas.</p>
-    <a href="users/singin" class="btn btn-primary btn-lg">Comenzar</a>
-</div>
+extends layouts/main
+
+block content
+  div.jumbotron.mt-4
+    h1.display Bienvenido a Notes
+    p.lead 100$ el Premium
+    hr.my-4
+    p En esta pagina podras agregar notas para no olvidar tareas.
+    a.btn.btn-primary.btn-lg(href="users/singin") Comenzar
