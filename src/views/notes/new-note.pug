@@ -1,34 +1,16 @@
-<style>
-  .card-header{
-    color: black;
-    background: red;
-    text-align: center;
-  }
-  .err{
-    text-align: center;
-  }
-  .can{
-    color: white;
-  }
-  .can:hover{
-    text-decoration: none;
-    color: white;
-  } 
-</style>
-{{#each errors}}
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{text}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-{{/each}}
-{{#if errort}}
-<h2 class="err">El campo Titulo esta vacio</h2>
-<br>
-{{/if}}
-{{#if errord}}
-<h2 class="err">El campo Descripcion esta vacio</h2>
-<br>
-{{/if}}
+//- each errors
+//-     <div class="alert alert-danger alert-dismissible fade show" role="alert">
+//-         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+//-     </div>
+
+if !notes.titulo
+    <h2 class="err">El campo Titulo esta vacio</h2>
+    <br>
+
+if !notes.description
+    <h2 class="err">El campo Descripcion esta vacio</h2>
+    <br>
+
 
 <div class="col-md-4 mx-auto">
     <div class="card">

@@ -13,13 +13,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-// app.engine('.pug', pug({
-//     defaultLayout: 'main',
-//     layoutsDir: path.join(app.get('views'), 'layouts'),
-//     partialsDir: path.join(app.get('views'), 'partials'),
-//     extname: '.pug'
-// }));
-app.set('view engine', 'pug');
+app.set('view engine', 'pug',({
+    defaultLayout: 'main',
+    layoutsDir: path.join(app.get('views'), 'layouts'),
+    extname: '.pug'
+}));
 
 
 app.use(methodOverride('_method'));
